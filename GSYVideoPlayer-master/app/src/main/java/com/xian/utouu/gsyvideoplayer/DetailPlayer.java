@@ -60,8 +60,10 @@ public class DetailPlayer extends FragmentActivity {
         detailPlayer.getFullscreenButton().setEnabled(false);
         resolveNormalVideoUI();
         orientationUtils = new OrientationUtils(this, detailPlayer);
-        //初始化状态不能旋转必须设置
+        //初始化状态不能旋转
         orientationUtils.setEnable(false);
+        //关闭自动旋转
+        detailPlayer.setRotateViewAuto(false);
         //显示锁屏的按钮
         detailPlayer.setNeedLockFull(true);
         //禁止显示全屏动画
