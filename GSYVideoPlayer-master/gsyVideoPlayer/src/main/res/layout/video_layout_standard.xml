@@ -168,11 +168,22 @@
     </RelativeLayout>
 
     <FrameLayout
+        android:id="@+id/fl_custom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_progressbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone">
+
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/startview"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
         <moe.codeest.enviews.ENPlayView
             android:id="@+id/start"
@@ -183,18 +194,8 @@
         <Button
             android:id="@+id/startbutton"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/fl_custom"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_progressbar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:visibility="gone">
+            android:layout_height="match_parent"
+            />
 
     </FrameLayout>
 </RelativeLayout>

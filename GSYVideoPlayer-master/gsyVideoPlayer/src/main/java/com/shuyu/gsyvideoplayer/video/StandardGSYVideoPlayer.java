@@ -135,9 +135,10 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         mCustomFrameLayout = (FrameLayout) findViewById(R.id.fl_custom);
         startButtonBackground = instance.getStartButtonBackground();
         if (startButtonBackground == 0) {
-            mStartButtonAnim.setVisibility(View.GONE);
-        } else {
             mStartButtonNormal.setVisibility(View.GONE);
+        } else {
+            mStartButtonAnim.setVisibility(View.GONE);
+
         }
         int backButtonBackGround = instance.getBackButtonBackground();
         if (backButtonBackGround != 0) {
@@ -659,7 +660,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
 
     private void updateStartImage() {
 
-        if (startButtonBackground == 0) {
+        if (startButtonBackground != 0) {
             GSYVideoManager instance = GSYVideoManager.instance();
             if (mCurrentState == CURRENT_STATE_PLAYING) {
                 mStartButtonNormal.setBackgroundResource(instance.getPauseButtonBackground());
@@ -674,7 +675,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
             enPlayView.setDuration(500);
             if (mCurrentState == CURRENT_STATE_PLAYING) {
                 enPlayView.play();
-                //mStartView.setImageResource(R.drawable.video_click_pause_selector);
+//                mStartView.setImageResource(R.drawable.video_click_pause_selector);
             } else if (mCurrentState == CURRENT_STATE_ERROR) {
                 enPlayView.pause();
                 //mStartView.setImageResource(R.drawable.video_click_error_selector);
@@ -994,7 +995,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
     }
 
     /**
-     * 回去title
+     * 获取title
      */
     public TextView getTitleTextView() {
         return mTitleTextView;
@@ -1101,7 +1102,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
      */
     public void setNeedLockFull(boolean needLoadFull) {
         this.mNeedLockFull = needLoadFull;
-    }
+}
 
     /**
      * 锁屏点击

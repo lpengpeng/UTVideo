@@ -6,22 +6,19 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.NestedScrollView;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.utouu.gsyvideoplayer.R;
-import com.xian.utouu.gsyvideoplayer.listener.SampleListener;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.shuyu.gsyvideoplayer.GSYVideoPlayer;
 import com.shuyu.gsyvideoplayer.listener.LockClickListener;
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 import com.transitionseverywhere.TransitionManager;
+import com.utouu.gsyvideoplayer.R;
+import com.xian.utouu.gsyvideoplayer.listener.SampleListener;
 import com.xian.utouu.gsyvideoplayer.utils.CommonUtil;
 
 import butterknife.BindView;
@@ -51,7 +48,6 @@ public class DetailPlayer extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_player);
         ButterKnife.bind(this);
-//http://baobab.wdjcdn.com/14564977406580.mp4
         String url = "http://baobab.wdjcdn.com/14564977406580.mp4";
         GSYVideoManager.instance().setSettingButtonListener(new View.OnClickListener() {
             @Override
@@ -61,80 +57,15 @@ public class DetailPlayer extends FragmentActivity {
         });
         detailPlayer.setUp(url, false, null, "测试视频");
 
-        //增加封面
-        final ImageView imageView = new ImageView(this);
-        ImageView imageView1 = new ImageView(this);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(R.mipmap.xxx1);
-        imageView1.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView1.setImageResource(R.mipmap.xxx1);
-
-        detailPlayer.setThumbImageView(imageView1);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(400, 400);
-        layoutParams.gravity = Gravity.CENTER;
-        imageView.setLayoutParams(layoutParams);
-        detailPlayer.addView(imageView);
-        detailPlayer.getSettingButton().setEnabled(false);
         detailPlayer.getFullscreenButton().setEnabled(false);
-        detailPlayer.getSeekBar().setEnabled(false);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imageView.setVisibility(View.GONE);
-                detailPlayer.getSettingButton().setEnabled(true);
-                detailPlayer.getFullscreenButton().setEnabled(true);
-                detailPlayer.getSeekBar().setEnabled(true);
-            }
-        });
-
         resolveNormalVideoUI();
-
         orientationUtils = new OrientationUtils(this, detailPlayer);
-        //初始化不打开外部的旋转
+        //初始化状态不能旋转必须设置
         orientationUtils.setEnable(false);
-
-        detailPlayer.setIsTouchWiget(true);// TODO: 2016/12/16 这个还不知道杂用
-        //打开自动旋转
-        detailPlayer.setRotateViewAuto(false);
-        detailPlayer.setLockLand(false);
-        detailPlayer.setShowFullAnimation(false);
-        detailPlayer.getStartButton();
-        detailPlayer.setIsShowBottomProgressBar(false);
-//        detailPlayer.setShowStartButtonType(1);
-
-        detailPlayer.setPlayButtonBackgroung(R.drawable.video_click_play_selector, R.drawable.video_click_pause_selector, R.drawable.video_click_error_selector);
-//        detailPlayer.setBackButtonBackGround(R.mipmap.xxx2);
-//        detailPlayer.setLockBackground(R.mipmap.lock,R.mipmap.unlock);
-//        detailPlayer.setFullScreen(R.mipmap.video_enlarge,R.mipmap.video_shrink);
-//        detailPlayer.setBrightnessIcon(R.mipmap.xxx2);
-//        detailPlayer.setDialogVolumeProgressBar(getResources().getDrawable(R.drawable.video_new_volume_progress_bg));
-//        detailPlayer.setVolumeIcon(R.mipmap.xxx2);
-
-//        detailPlayer.getFullscreenButton().setImageResource(R.mipmap.xxx1);
-//        detailPlayer.getBackButton().setImageResource(R.mipmap.xxx2);
-//        detailPlayer.setCenterDialogProgressTextColor(0xfff16060, 0xffffffff);
-//        detailPlayer.setCenterProgressIcon(R.mipmap.video_enlarge, R.mipmap.video_shrink);
-//        detailPlayer.setCenterDialogProgressBar(getResources().getDrawable(R.drawable.video_new_seekbar_progress));
-//        detailPlayer.setBrightnessTextColor(0xfff16060);
-//        detailPlayer.setTitleTextColor(0xfff16060);
-//        detailPlayer.setCenterDialogBackground(getResources().getDrawable(R.drawable.video_new_seekbar_progress));
-//        detailPlayer.setVolumeDialogBackground(getResources().getDrawable(R.drawable.video_new_seekbar_progress));
-//        detailPlayer.getSettingButton().setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                    Toast.makeText(DetailPlayer.this, "niiooijiojio", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//        GSYVideoManager.instance().setSettingButtonListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(DetailPlayer.this, "niiooijiojio", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        detailPlayer.addView(imageView1);
         //显示锁屏的按钮
         detailPlayer.setNeedLockFull(true);
+        //禁止显示全屏动画
+        detailPlayer.setShowFullAnimation(false);
         detailPlayer.setLockClickListener(new LockClickListener() {
             @Override
             public void onClick(View view, boolean lock) {
@@ -149,9 +80,6 @@ public class DetailPlayer extends FragmentActivity {
 
                 //第一个true是否需要隐藏actionbar，第二个true是否需要隐藏statusbar
                 detailPlayer.startWindowFullscreen(DetailPlayer.this, true, true);
-
-                //这是以前旧的方式
-                //toDo();
             }
         });
         detailPlayer.setThumbPlay(false);//点击封面是否可以播放
@@ -226,6 +154,7 @@ public class DetailPlayer extends FragmentActivity {
         GSYVideoPlayer.releaseAllVideos();
         if (orientationUtils != null)
             orientationUtils.releaseListener();
+        //释放所有的设置
         GSYVideoManager.instance().releaseAllSettting();
     }
 
@@ -242,24 +171,12 @@ public class DetailPlayer extends FragmentActivity {
                 //新版本isIfCurrentIsFullscreen的标志位内部提前设置了，所以不会和手动点击冲突
                 if (detailPlayer.isIfCurrentIsFullscreen()) {
                     StandardGSYVideoPlayer.backFromWindowFull(this);
-                    boolean needLockFull = detailPlayer.isNeedLockFull();
                 }
                 if (orientationUtils != null) {
                     orientationUtils.setEnable(true);
                 }
             }
         }
-    }
-
-    private void toFull() {
-        isFull = true;
-
-        TransitionManager.beginDelayedTransition(activityDetailPlayer);
-
-        CommonUtil.setViewHeight(detailPlayer, ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT);
-        resolveFullVideoUI();
-        orientationUtils.setEnable(true);
     }
 
     private void toNormal() {
@@ -276,25 +193,7 @@ public class DetailPlayer extends FragmentActivity {
         }, delay);
     }
 
-    private void toDo() {
-        if (isFull) {
-            toNormal();
-        } else {
-            toFull();
-        }
-    }
-
     private void resolveNormalVideoUI() {
-        //增加title
-//        detailPlayer.getTitleTextView().setVisibility(View.GONE);
         detailPlayer.getTitleTextView().setText("测试视频");
-//        detailPlayer.getBackButton().setVisibility(View.GONE);
     }
-
-    private void resolveFullVideoUI() {
-        detailPlayer.getTitleTextView().setVisibility(View.VISIBLE);
-        detailPlayer.getTitleTextView().setText("测试视频");
-        detailPlayer.getBackButton().setVisibility(View.VISIBLE);
-    }
-
 }
