@@ -39,7 +39,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import moe.codeest.enviews.ENDownloadView;
-import moe.codeest.enviews.ENPlayView;
 
 import static com.shuyu.gsyvideoplayer.R.id.volume_progressbar;
 
@@ -134,12 +133,6 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         }
         mCustomFrameLayout = (FrameLayout) findViewById(R.id.fl_custom);
         startButtonBackground = instance.getStartButtonBackground();
-        if (startButtonBackground == 0) {
-            mStartButtonNormal.setVisibility(View.GONE);
-        } else {
-            mStartButtonAnim.setVisibility(View.GONE);
-
-        }
         int backButtonBackGround = instance.getBackButtonBackground();
         if (backButtonBackGround != 0) {
             mBackButton.setImageResource(backButtonBackGround);
@@ -472,10 +465,10 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToNormal");
         mTopContainer.setVisibility(View.VISIBLE);
 //        mBottomContainer.setVisibility(View.INVISIBLE);
-        mStartView.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.setVisibility(View.INVISIBLE);
+        mStartButtonNormal.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.setVisibility(View.INVISIBLE);
         GSYVideoManager instance = GSYVideoManager.instance();
-        mLoadingProgressBar.reset();
+//        mLoadingProgressBar.reset();
         mThumbImageViewLayout.setVisibility(View.VISIBLE);
         mCoverImageView.setVisibility(View.VISIBLE);
         if (mBottomProgressBar != null) {
@@ -489,9 +482,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToPrepareingShow");
         mTopContainer.setVisibility(View.VISIBLE);
         mBottomContainer.setVisibility(View.VISIBLE);
-        mStartView.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.start();
+        mStartButtonNormal.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.start();
         mThumbImageViewLayout.setVisibility(View.INVISIBLE);
         mCoverImageView.setVisibility(View.VISIBLE);
         if (mBottomProgressBar != null) {
@@ -504,7 +497,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToPrepareingClear");
         mTopContainer.setVisibility(View.INVISIBLE);
         mBottomContainer.setVisibility(View.INVISIBLE);
-        mStartView.setVisibility(View.INVISIBLE);
+        mStartButtonNormal.setVisibility(View.INVISIBLE);
         mThumbImageViewLayout.setVisibility(View.INVISIBLE);
         if (mBottomProgressBar != null) {
             mBottomProgressBar.setVisibility(View.INVISIBLE);
@@ -517,9 +510,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToPlayingShow");
         mTopContainer.setVisibility(View.VISIBLE);
         mBottomContainer.setVisibility(View.VISIBLE);
-        mStartView.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.reset();
+        mStartButtonNormal.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.reset();
         mThumbImageViewLayout.setVisibility(View.INVISIBLE);
         mFullscreenButton.setEnabled(true);
         mCoverImageView.setVisibility(View.INVISIBLE);
@@ -542,9 +535,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToPauseShow");
         mTopContainer.setVisibility(View.VISIBLE);
         mBottomContainer.setVisibility(View.VISIBLE);
-        mStartView.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.reset();
+        mStartButtonNormal.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.reset();
         mThumbImageViewLayout.setVisibility(View.INVISIBLE);
         mCoverImageView.setVisibility(View.INVISIBLE);
         if (mBottomProgressBar != null) {
@@ -568,9 +561,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToPlayingBufferingShow");
         mTopContainer.setVisibility(View.VISIBLE);
         mBottomContainer.setVisibility(View.VISIBLE);
-        mStartView.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.start();
+        mStartButtonNormal.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.start();
         mThumbImageViewLayout.setVisibility(View.INVISIBLE);
         mCoverImageView.setVisibility(View.INVISIBLE);
         if (mBottomProgressBar != null) {
@@ -583,9 +576,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToPlayingBufferingClear");
         mTopContainer.setVisibility(View.INVISIBLE);
         mBottomContainer.setVisibility(View.INVISIBLE);
-        mStartView.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.start();
+        mStartButtonNormal.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.start();
         mThumbImageViewLayout.setVisibility(View.INVISIBLE);
         mCoverImageView.setVisibility(View.INVISIBLE);
         if (mBottomProgressBar != null) {
@@ -599,9 +592,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToClear");
         mTopContainer.setVisibility(View.INVISIBLE);
         mBottomContainer.setVisibility(View.INVISIBLE);
-        mStartView.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.reset();
+        mStartButtonNormal.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.reset();
         mThumbImageViewLayout.setVisibility(View.INVISIBLE);
         mCoverImageView.setVisibility(View.INVISIBLE);
         if (mBottomProgressBar != null) {
@@ -614,9 +607,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToCompleteShow");
         mTopContainer.setVisibility(View.VISIBLE);
         mBottomContainer.setVisibility(View.VISIBLE);
-        mStartView.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.reset();
+        mStartButtonNormal.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.reset();
         mThumbImageViewLayout.setVisibility(View.VISIBLE);
         mCoverImageView.setVisibility(View.INVISIBLE);
         if (mBottomProgressBar != null) {
@@ -630,9 +623,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToCompleteClear");
         mTopContainer.setVisibility(View.INVISIBLE);
         mBottomContainer.setVisibility(View.INVISIBLE);
-        mStartView.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.reset();
+        mStartButtonNormal.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.reset();
         mThumbImageViewLayout.setVisibility(View.VISIBLE);
         mCoverImageView.setVisibility(View.INVISIBLE);
         if (mBottomProgressBar != null) {
@@ -646,9 +639,9 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         Debuger.printfLog("changeUiToError");
         mTopContainer.setVisibility(View.INVISIBLE);
         mBottomContainer.setVisibility(View.INVISIBLE);
-        mStartView.setVisibility(View.VISIBLE);
-        mLoadingProgressBar.setVisibility(View.INVISIBLE);
-        mLoadingProgressBar.reset();
+        mStartButtonNormal.setVisibility(View.VISIBLE);
+//        mLoadingProgressBar.setVisibility(View.INVISIBLE);
+//        mLoadingProgressBar.reset();
         mThumbImageViewLayout.setVisibility(View.INVISIBLE);
         mCoverImageView.setVisibility(View.VISIBLE);
         if (mBottomProgressBar != null) {
@@ -669,22 +662,15 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
             } else {
                 mStartButtonNormal.setBackgroundResource(instance.getStartButtonBackground());
             }
-
-        } else {
-            ENPlayView enPlayView = (ENPlayView) mStartButtonAnim;
-            enPlayView.setDuration(500);
+        }else {
             if (mCurrentState == CURRENT_STATE_PLAYING) {
-                enPlayView.play();
-//                mStartView.setImageResource(R.drawable.video_click_pause_selector);
+                mStartButtonNormal.setBackgroundResource(R.drawable.video_pause);
             } else if (mCurrentState == CURRENT_STATE_ERROR) {
-                enPlayView.pause();
-                //mStartView.setImageResource(R.drawable.video_click_error_selector);
+//                mStartButtonNormal.setBackgroundResource(instance.getErrorButtonBackground());
             } else {
-                enPlayView.pause();
-                //mStartView.setImageResource(R.drawable.video_click_play_selector);
+                mStartButtonNormal.setBackgroundResource(R.drawable.video_play);
             }
         }
-
     }
 
 
@@ -964,7 +950,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         if (mBottomProgressBar != null) {
             mBottomProgressBar.setVisibility(View.VISIBLE);
         }
-        mStartView.setVisibility(View.INVISIBLE);
+        mStartButtonNormal.setVisibility(View.INVISIBLE);
     }
 
     private void resolveThumbImage(View thumb) {

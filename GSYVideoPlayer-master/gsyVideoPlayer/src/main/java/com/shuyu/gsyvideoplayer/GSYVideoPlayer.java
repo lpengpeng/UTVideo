@@ -128,7 +128,6 @@ public abstract class GSYVideoPlayer extends GSYBaseVideoPlayer implements View.
 
     protected boolean mCacheFile = false; //是否是缓存的文件
     protected Button mStartButtonNormal;
-    protected FrameLayout mStartView;
 
 
 
@@ -155,8 +154,6 @@ public abstract class GSYVideoPlayer extends GSYBaseVideoPlayer implements View.
     protected void init(Context context) {
         this.mContext = context;
         View.inflate(context, getLayoutId(), this);
-        mStartButtonAnim = findViewById(R.id.start);
-        mStartView = (FrameLayout) findViewById(R.id.startview);
         mStartButtonNormal = (Button) findViewById(R.id.startbutton);
         mSmallClose = findViewById(R.id.small_close);
         mBackButton = (ImageView) findViewById(R.id.back);
@@ -171,7 +168,7 @@ public abstract class GSYVideoPlayer extends GSYBaseVideoPlayer implements View.
 
         if (isInEditMode())
             return;
-        mStartButtonAnim.setOnClickListener(this);
+        mStartButtonNormal.setOnClickListener(this);
         mFullscreenButton.setOnClickListener(this);
         mProgressBar.setOnSeekBarChangeListener(this);
         mBottomContainer.setOnClickListener(this);
@@ -297,7 +294,7 @@ public abstract class GSYVideoPlayer extends GSYBaseVideoPlayer implements View.
         if (mHideKey && mIfCurrentIsFullscreen) {
             hideNavKey(mContext);
         }
-        if (i == R.id.start) {
+        if (i == R.id.startbutton) {
             if (TextUtils.isEmpty(mUrl)) {
                 Toast.makeText(getContext(), getResources().getString(R.string.no_url), Toast.LENGTH_SHORT).show();
                 return;
@@ -1151,7 +1148,7 @@ public abstract class GSYVideoPlayer extends GSYBaseVideoPlayer implements View.
      * 获取播放按键
      */
     public View getStartButton() {
-        return mStartButtonAnim;
+        return mStartButtonNormal;
     }
 
     public View getmStartButtonNormal() {
