@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/duration_image_tip"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:background="@drawable/video_backward_icon">
+
+        <TextView
+            android:id="@+id/tv_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="14dp"
+            android:layout_centerHorizontal="true"
+            android:text="00:01"
+            android:textColor="#fff"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
