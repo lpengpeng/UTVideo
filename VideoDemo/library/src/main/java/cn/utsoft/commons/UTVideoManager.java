@@ -15,19 +15,19 @@ import android.view.View;
 import com.danikula.videocache.CacheListener;
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.danikula.videocache.file.Md5FileNameGenerator;
-import cn.utsoft.commons.listener.UTMediaPlayerListener;
-import cn.utsoft.commons.model.GSYModel;
-import cn.utsoft.commons.utils.CommonUtil;
-import cn.utsoft.commons.utils.Debuger;
-import cn.utsoft.commons.utils.FileUtils;
-import cn.utsoft.commons.utils.UTVideoType;
-import cn.utsoft.commons.utils.StorageUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.Map;
 
+import cn.utsoft.commons.listener.UTMediaPlayerListener;
+import cn.utsoft.commons.model.GSYModel;
+import cn.utsoft.commons.utils.CommonUtil;
+import cn.utsoft.commons.utils.Debuger;
+import cn.utsoft.commons.utils.FileUtils;
+import cn.utsoft.commons.utils.StorageUtils;
+import cn.utsoft.commons.utils.UTVideoType;
 import tv.danmaku.ijk.media.exo.IjkExoMediaPlayer;
 import tv.danmaku.ijk.media.player.AbstractMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
@@ -97,6 +97,7 @@ public class UTVideoManager implements IMediaPlayer.OnPreparedListener, IMediaPl
     private View.OnClickListener buttonListener;
     private int landLayout;
     private int portLayout;
+    private int moreButtonBackground;
 
     public static synchronized UTVideoManager instance() {
         if (videoManager == null) {
@@ -654,7 +655,22 @@ public class UTVideoManager implements IMediaPlayer.OnPreparedListener, IMediaPl
     }
 
     /**
-     * 设置全屏的按钮
+     * 设置更多按钮的背景
+     * @param moreButtonBackground
+     */
+    public void setMoreButtonBackground(int moreButtonBackground){
+        this.moreButtonBackground = moreButtonBackground;
+    }
+
+    /**
+     * 获取更多按钮的背景
+     * @return
+     */
+    public int getMoreButtonBackground(){
+        return moreButtonBackground;
+    }
+    /**
+     * 设置全屏的按钮背景
      *
      * @param fullScreen
      * @param unFullScreen
@@ -792,6 +808,8 @@ public class UTVideoManager implements IMediaPlayer.OnPreparedListener, IMediaPl
     public void releaseAllSettting() {
         showBottomProgressBar = false;
         startResId = 0;
+        landLayout = 0;
+        portLayout = 0;
         pauseResId = 0;
         errorResId = 0;
         backButtoResId = 0;
@@ -803,6 +821,7 @@ public class UTVideoManager implements IMediaPlayer.OnPreparedListener, IMediaPl
         forwardIcon = 0;
         backwardIcon = 0;
         backButtonColor = 0;
+        moreButtonBackground = 0;
         centerDialogBackground = 0;
         buttonListener = null;
     }

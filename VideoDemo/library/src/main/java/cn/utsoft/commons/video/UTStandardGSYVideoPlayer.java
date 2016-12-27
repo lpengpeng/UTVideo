@@ -144,6 +144,10 @@ public class UTStandardGSYVideoPlayer extends UTVideoPlayer {
         mBackButton.setOnClickListener(this);
         mStartButtonNormal.setOnClickListener(this);
         int backButtonTextColor = instance.getTitleTextColor();
+        int moreButtonBackground = instance.getMoreButtonBackground();
+        if (moreButtonBackground!=0) {
+            mSettingButton.setBackgroundResource(moreButtonBackground);
+        }
         if (backButtonTextColor != 0) {
             mTitleTextView.setTextColor(backButtonTextColor);
         }
@@ -974,7 +978,7 @@ public class UTStandardGSYVideoPlayer extends UTVideoPlayer {
      *
      * @param resId
      */
-    public void setBackButtonBackGround(int resId) {
+    public void setBackButtonBackground(int resId) {
         UTVideoManager.instance().setBackButtonBackground(resId);
     }
 
@@ -1043,12 +1047,29 @@ public class UTStandardGSYVideoPlayer extends UTVideoPlayer {
         mCustomFrameLayout.removeAllViews();
     }
 
-    //设置横竖屏不同布局
+    /**
+     * 设置横竖屏的布局
+     * @param landLayoutId
+     * @param portLayoutId
+     */
     public void setTwoLayout(int landLayoutId, int portLayoutId) {
         UTVideoManager.instance().setTwoLayout(landLayoutId, portLayoutId);
     }
     //设置中间dialog的背景
+
+    /**
+     * 设置中间dialog的背景
+     * @param centerDialogBackground
+     */
     public void setCenterDialogBackground(int centerDialogBackground){
         UTVideoManager.instance().setCenterDialogBackGround(centerDialogBackground);
+    }
+
+    /**
+     * 设置更多按钮的背景
+     * @param resId
+     */
+    public void setMoreButtonBackground(int resId){
+        UTVideoManager.instance().setMoreButtonBackground(resId);
     }
 }
