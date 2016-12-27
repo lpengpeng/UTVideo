@@ -19,21 +19,20 @@
             android:id="@+id/open_btn"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Open Video" />
+            android:text="视频一" />
 
         <Button
             android:id="@+id/list_detail"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Detail Video2" />
+            android:text="标准视频" />
 
         <Button
             android:id="@+id/clear_cache"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="clear Cache" />
-
+            android:text="清除缓存" />
     </LinearLayout>
 </ScrollView>
