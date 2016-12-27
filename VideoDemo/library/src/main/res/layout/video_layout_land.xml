@@ -69,47 +69,39 @@
 
     <ImageView
         android:id="@+id/lock_screen"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="14dp"
         android:src="@drawable/unlock" />
 
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_above="@+id/bottom_progressbar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="11dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:layout_alignParentBottom="true">
 
         <Button
             android:id="@+id/startbutton"
-            android:layout_width="17dp"
-            android:layout_height="19dp"
+            android:layout_width="15dp"
+            android:layout_height="16dp"
             android:layout_marginLeft="18dp"
-            android:background="@drawable/video_play"
-            android:padding="1dp" />
-
-        <TextView
-            android:id="@+id/current"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:text="00:00"
-            android:textColor="#ffffff" />
+            android:layout_centerVertical="true"
+            android:background="@drawable/video_play" />
 
         <SeekBar
             android:id="@+id/progress"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1.0"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/total"
+            android:layout_toRightOf="@+id/current"
             android:background="@null"
             android:max="100"
             android:maxHeight="4dp"
@@ -123,55 +115,31 @@
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/fullscreen"
             android:text="00:00"
             android:textColor="#ffffff" />
 
         <ImageView
             android:id="@+id/fullscreen"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:paddingRight="21dp"
-            android:scaleType="center"
-            android:src="@drawable/video_enlarge" />
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/layout_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
-
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:paddingLeft="18dp"
-            android:paddingRight="10dp"
-            android:paddingTop="16dp"
-            android:src="@drawable/video_back" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textColor="#fff"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/btn_set"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="18dp"
-            android:background="@drawable/more" />
+            android:layout_marginRight="20dp"
+            android:src="@drawable/video_enlarge" />
 
+        <TextView
+            android:id="@+id/current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/startbutton"
+            android:text="00:00"
+            android:textSize="13dp"
+            android:textColor="#ffffff" />
     </RelativeLayout>
 
     <FrameLayout
@@ -184,4 +152,40 @@
         android:visibility="gone">
 
     </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:layout_height="17dp"
+            android:src="@drawable/video_back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btn_set"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/more" />
+
+    </RelativeLayout>
 </RelativeLayout>
