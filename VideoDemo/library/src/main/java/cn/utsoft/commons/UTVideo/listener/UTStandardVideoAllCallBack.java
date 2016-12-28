@@ -1,4 +1,4 @@
-package cn.utsoft.commons.VideoView.listener;
+package cn.utsoft.commons.UTVideo.listener;
 
 public interface UTStandardVideoAllCallBack extends VideoAllCallBack {
 

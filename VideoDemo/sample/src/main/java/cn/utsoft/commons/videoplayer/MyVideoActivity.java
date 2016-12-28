@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.NestedScrollView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -21,9 +22,9 @@ import cn.utsoft.commons.UTVideoManager;
 import cn.utsoft.commons.UTVideoPlayer;
 import cn.utsoft.commons.videoplayer.listener.SampleListener;
 import cn.utsoft.commons.videoplayer.utils.CommonUtil;
-import cn.utsoft.commons.VideoView.listener.LockClickListener;
-import cn.utsoft.commons.VideoView.utils.OrientationUtils;
-import cn.utsoft.commons.VideoView.video.UTStandardGSYVideoPlayer;
+import cn.utsoft.commons.UTVideo.listener.LockClickListener;
+import cn.utsoft.commons.UTVideo.utils.OrientationUtils;
+import cn.utsoft.commons.UTVideo.video.UTStandardGSYVideoPlayer;
 
 /**
  * Create by 李俊鹏 on 2016/12/20 20:49
@@ -73,7 +74,7 @@ public class MyVideoActivity extends FragmentActivity {
         detailPlayer.setLockClickListener(new LockClickListener() {
             @Override
             public void onClick(View view, boolean lock) {
-                    orientationUtils.setEnable(!lock);
+                orientationUtils.setEnable(!lock);
             }
         });
         detailPlayer.getFullscreenButton().setOnClickListener(new View.OnClickListener() {
@@ -85,7 +86,20 @@ public class MyVideoActivity extends FragmentActivity {
                 detailPlayer.startWindowFullscreen(MyVideoActivity.this, true, true);
             }
         });
-        detailPlayer.setThumbPlay(false);//点击封面是否可以播放
+        ImageView imageView = new ImageView(this);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setImageResource(R.mipmap.xxx1);
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                detailPlayer.deleteView();
+//            }
+//        });
+//        //添加自定义布局
+//        detailPlayer.addView(imageView);
+        //添加封面
+        detailPlayer.setThumbImageView(imageView);
+        detailPlayer.setThumbPlay(true);//点击封面是否可以播放
 //        final RelativeLayout thumbImageViewLayout = detailPlayer.getThumbImageViewLayout();
 //        thumbImageViewLayout.setOnClickListener(new View.OnClickListener() {
 //            @Override

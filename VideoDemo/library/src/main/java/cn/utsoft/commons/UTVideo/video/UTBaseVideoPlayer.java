@@ -1,4 +1,4 @@
-package cn.utsoft.commons.VideoView.video;
+package cn.utsoft.commons.UTVideo.video;
 
 import android.app.Activity;
 import android.content.Context;
@@ -28,11 +28,11 @@ import cn.utsoft.commons.UTTextureView;
 import cn.utsoft.commons.UTVideoManager;
 import cn.utsoft.commons.UTVideoPlayer;
 import cn.utsoft.commons.UTVideoTouch;
-import cn.utsoft.commons.VideoView.listener.UTMediaPlayerListener;
-import cn.utsoft.commons.VideoView.listener.VideoAllCallBack;
-import cn.utsoft.commons.VideoView.utils.CommonUtil;
-import cn.utsoft.commons.VideoView.utils.Debuger;
-import cn.utsoft.commons.VideoView.utils.OrientationUtils;
+import cn.utsoft.commons.UTVideo.listener.UTMediaPlayerListener;
+import cn.utsoft.commons.UTVideo.listener.VideoAllCallBack;
+import cn.utsoft.commons.UTVideo.utils.CommonUtil;
+import cn.utsoft.commons.UTVideo.utils.Debuger;
+import cn.utsoft.commons.UTVideo.utils.OrientationUtils;
 
 /**
  * Created by lijunpeng on 2016/12/21.

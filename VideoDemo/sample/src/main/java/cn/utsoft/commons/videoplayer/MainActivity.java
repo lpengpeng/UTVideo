@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.utsoft.commons.UTVideoManager;
 import cn.utsoft.commons.videoplayer.utils.JumpUtils;
-import cn.utsoft.commons.VideoView.utils.Debuger;
+import cn.utsoft.commons.UTVideo.utils.Debuger;
 
 /**
  * Create by 李俊鹏 on 2016/12/20 20:49

@@ -1,4 +1,4 @@
-package cn.utsoft.commons.VideoView.utils;
+package cn.utsoft.commons.UTVideo.utils;
 
 import android.content.Context;
 import android.os.Environment;

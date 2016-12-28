@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.TextureView;
 
-import cn.utsoft.commons.VideoView.utils.UTVideoType;
+import cn.utsoft.commons.UTVideo.utils.UTVideoType;
 
 /**
  * 用于显示video的，做了横屏与竖屏的匹配，还有需要rotation需求的

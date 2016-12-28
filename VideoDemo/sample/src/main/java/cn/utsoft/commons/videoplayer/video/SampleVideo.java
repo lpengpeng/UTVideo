@@ -16,8 +16,8 @@ import java.util.List;
 import cn.utsoft.commons.UTVideoManager;
 import cn.utsoft.commons.videoplayer.model.SwitchVideoModel;
 import cn.utsoft.commons.videoplayer.view.SwitchVideoTypeDialog;
-import cn.utsoft.commons.VideoView.utils.UTVideoType;
-import cn.utsoft.commons.VideoView.video.UTStandardGSYVideoPlayer;
+import cn.utsoft.commons.UTVideo.utils.UTVideoType;
+import cn.utsoft.commons.UTVideo.video.UTStandardGSYVideoPlayer;
 
 /**
  * Create by 李俊鹏 on 2016/12/20 20:50

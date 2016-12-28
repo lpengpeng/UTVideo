@@ -1,4 +1,4 @@
-package cn.utsoft.commons.VideoView.utils;
+package cn.utsoft.commons.UTVideo.utils;
 
 /**
  * Created by shuyu on 2016/12/7.

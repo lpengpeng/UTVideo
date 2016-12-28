@@ -1,6 +1,6 @@
 package cn.utsoft.commons.videoplayer.listener;
 
-import cn.utsoft.commons.VideoView.listener.UTStandardVideoAllCallBack;
+import cn.utsoft.commons.UTVideo.listener.UTStandardVideoAllCallBack;
 
 /**
  * Create by 李俊鹏 on 2016/12/20 20:50

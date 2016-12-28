@@ -1,4 +1,4 @@
-package cn.utsoft.commons.VideoView.video;
+package cn.utsoft.commons.UTVideo.video;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -33,11 +33,11 @@ import java.util.TimerTask;
 
 import cn.utsoft.commons.UTVideoManager;
 import cn.utsoft.commons.UTVideoPlayer;
-import cn.utsoft.commons.VideoView.listener.LockClickListener;
-import cn.utsoft.commons.VideoView.listener.UTStandardVideoAllCallBack;
-import cn.utsoft.commons.VideoView.utils.CommonUtil;
-import cn.utsoft.commons.VideoView.utils.Debuger;
-import cn.utsoft.commons.VideoView.utils.NetworkUtils;
+import cn.utsoft.commons.UTVideo.listener.LockClickListener;
+import cn.utsoft.commons.UTVideo.listener.UTStandardVideoAllCallBack;
+import cn.utsoft.commons.UTVideo.utils.CommonUtil;
+import cn.utsoft.commons.UTVideo.utils.Debuger;
+import cn.utsoft.commons.UTVideo.utils.NetworkUtils;
 import moe.codeest.enviews.ENDownloadView;
 
 

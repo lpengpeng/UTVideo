@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import cn.utsoft.commons.VideoView.video.UTBaseVideoPlayer;
+import cn.utsoft.commons.UTVideo.video.UTBaseVideoPlayer;
 
 public class UTVideoTouch implements View.OnTouchListener {
 
