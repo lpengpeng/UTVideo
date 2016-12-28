@@ -1,4 +1,4 @@
-package cn.utsoft.commons.listener;
+package cn.utsoft.commons.VideoView.listener;
 
 /**
  * Created by Nathen

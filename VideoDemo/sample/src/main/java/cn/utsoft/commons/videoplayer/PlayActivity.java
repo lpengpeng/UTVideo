@@ -21,7 +21,7 @@ import cn.utsoft.commons.UTVideoPlayer;
 import cn.utsoft.commons.videoplayer.listener.OnTransitionListener;
 import cn.utsoft.commons.videoplayer.model.SwitchVideoModel;
 import cn.utsoft.commons.videoplayer.video.SampleVideo;
-import cn.utsoft.commons.utils.OrientationUtils;
+import cn.utsoft.commons.VideoView.utils.OrientationUtils;
 
 
 /**

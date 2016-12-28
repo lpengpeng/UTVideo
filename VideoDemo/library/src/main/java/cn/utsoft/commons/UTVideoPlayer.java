@@ -32,10 +32,10 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import cn.utsoft.commons.utils.CommonUtil;
-import cn.utsoft.commons.utils.Debuger;
-import cn.utsoft.commons.utils.StorageUtils;
-import cn.utsoft.commons.video.UTBaseVideoPlayer;
+import cn.utsoft.commons.VideoView.utils.CommonUtil;
+import cn.utsoft.commons.VideoView.utils.Debuger;
+import cn.utsoft.commons.VideoView.utils.StorageUtils;
+import cn.utsoft.commons.VideoView.video.UTBaseVideoPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 

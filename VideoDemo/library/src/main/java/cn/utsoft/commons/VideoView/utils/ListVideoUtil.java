@@ -1,4 +1,4 @@
-package cn.utsoft.commons.utils;
+package cn.utsoft.commons.VideoView.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,9 +17,9 @@ import java.io.File;
 import java.util.Map;
 
 import cn.utsoft.commons.UTVideoPlayer;
-import cn.utsoft.commons.listener.UTStandardVideoAllCallBack;
-import cn.utsoft.commons.video.UTBaseVideoPlayer;
-import cn.utsoft.commons.video.UTStandardGSYVideoPlayer;
+import cn.utsoft.commons.VideoView.listener.UTStandardVideoAllCallBack;
+import cn.utsoft.commons.VideoView.video.UTBaseVideoPlayer;
+import cn.utsoft.commons.VideoView.video.UTStandardGSYVideoPlayer;
 
 /**
  * Created by shuyu on 2016/11/12.

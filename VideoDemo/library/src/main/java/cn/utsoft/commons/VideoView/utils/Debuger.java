@@ -1,4 +1,4 @@
-package cn.utsoft.commons.utils;
+package cn.utsoft.commons.VideoView.utils;
 
 import android.app.Activity;
 import android.text.TextUtils;

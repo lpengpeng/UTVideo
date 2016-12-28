@@ -1,4 +1,4 @@
-package cn.utsoft.commons.model;
+package cn.utsoft.commons.VideoView.model;
 
 import java.util.Map;
 

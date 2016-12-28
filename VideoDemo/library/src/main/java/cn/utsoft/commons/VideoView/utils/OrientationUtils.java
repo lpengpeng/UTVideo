@@ -1,4 +1,4 @@
-package cn.utsoft.commons.utils;
+package cn.utsoft.commons.VideoView.utils;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
@@ -7,7 +7,7 @@ import android.view.OrientationEventListener;
 
 import com.shuyu.gsyvideoplayer.R;
 
-import cn.utsoft.commons.video.UTBaseVideoPlayer;
+import cn.utsoft.commons.VideoView.video.UTBaseVideoPlayer;
 
 /**
  * 处理屏幕旋转的的逻辑

@@ -21,9 +21,9 @@ import cn.utsoft.commons.UTVideoManager;
 import cn.utsoft.commons.UTVideoPlayer;
 import cn.utsoft.commons.videoplayer.listener.SampleListener;
 import cn.utsoft.commons.videoplayer.utils.CommonUtil;
-import cn.utsoft.commons.listener.LockClickListener;
-import cn.utsoft.commons.utils.OrientationUtils;
-import cn.utsoft.commons.video.UTStandardGSYVideoPlayer;
+import cn.utsoft.commons.VideoView.listener.LockClickListener;
+import cn.utsoft.commons.VideoView.utils.OrientationUtils;
+import cn.utsoft.commons.VideoView.video.UTStandardGSYVideoPlayer;
 
 /**
  * Create by 李俊鹏 on 2016/12/20 20:49
