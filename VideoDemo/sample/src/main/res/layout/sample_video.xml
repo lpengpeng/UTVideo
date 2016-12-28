@@ -117,8 +117,8 @@
 
     <FrameLayout
         android:id="@+id/startview"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true">
 
